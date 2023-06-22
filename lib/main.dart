@@ -56,7 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Column(children: [
           const Text('Hello, world!!'),
           const Text('ハロー、ワールド！！'),
-          Text(_type, style: const TextStyle(fontSize: 20, color: Colors.red)),
+          if (_counter % 2 == 0)
+            Text(_type,
+                style: const TextStyle(fontSize: 20, color: Colors.red)),
           TextButton(
             onPressed: () => {print("ボタンが押されました！")},
             child: const Text('テキストボタン'),
