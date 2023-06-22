@@ -29,6 +29,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+  String _type = "偶数";
+  void incrementCounter() {
+    print('hello');
+    print(_counter);
+    print(_type);
+
+    setState(() {
+      _counter++;
+      _type = _counter % 2 == 0 ? "偶数" : "奇数";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Column(children: [
           const Text('Hello, world!!'),
           const Text('ハロー、ワールド！！'),
+          Text(_type, style: const TextStyle(fontSize: 20, color: Colors.red)),
           TextButton(
             onPressed: () => {print("ボタンが押されました！")},
             child: const Text('テキストボタン'),
@@ -69,7 +83,8 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ]),
         floatingActionButton: FloatingActionButton(
-            onPressed: () => {print("押したね？")}, child: const Icon(Icons.timer)),
+            onPressed: () => incrementCounter(),
+            child: const Icon(Icons.timer)),
         drawer: const Drawer(child: Center(child: Text("Drawerです。"))),
         endDrawer: const Drawer(child: Center(child: Text("エンドドロワーです。"))));
   }
