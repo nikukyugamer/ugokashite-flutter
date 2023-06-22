@@ -36,9 +36,13 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(widget.title),
         ),
-        body: const Column(children: [
-          Text('Hello, world!!'),
-          Text('ハロー、ワールド！！'),
+        body: Column(children: [
+          const Text('Hello, world!!'),
+          const Text('ハロー、ワールド！！'),
+          TextButton(
+            onPressed: () => {print("ボタンが押されました！")},
+            child: const Text('テキストボタン'),
+          )
         ]));
   }
 }
