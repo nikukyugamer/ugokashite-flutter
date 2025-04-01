@@ -1,4 +1,5 @@
-.fvm/flutter_sdk
+# FVM Version Cache
+.fvm/
 
 # Miscellaneous
 *.class
